@@ -4,9 +4,10 @@ import scraping
 
 
 def main():
-    result = scraping.Library().get()
+    url = "https://opac2.lib.oit.ac.jp/webopac/BB99305907"
+    result = scraping.Library().get(url)
 
-    with open("library.json", "w") as f:
+    with open("book.json", "w") as f:
         json.dump(result, f, indent=4, ensure_ascii=False)
 
 
